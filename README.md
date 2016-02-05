@@ -16,5 +16,5 @@ Suffix Tree Construction:
  
  
  Todo: 
-  Populate the tree view.
-  Implement generalized construction.
+  \tPopulate the tree view.
+  \tImplement generalized construction.
