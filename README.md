@@ -18,4 +18,4 @@ Given a string, construct a suffix tree and display as graph and tree.
 * Implement Suffix Array
 
 ### Why:
-I am looking for patterns and anomalies within program execution heap traces and snap shots.
+   I am looking for patterns and anomalies within program execution heap traces and snap shots.
