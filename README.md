@@ -8,9 +8,9 @@ C# Forms implementation.
 
 Suffix Tree Construction:
 
- Based on [code.google.com/p/csharsuffixtree](https://code.google.com/archive/p/csharsuffixtree).
+*"Based on [code.google.com/p/csharsuffixtree](https://code.google.com/archive/p/csharsuffixtree)."
  
- Implements [Ukkonen's](https://en.wikipedia.org/wiki/Ukkonen%27s_algorithm) linear time algorithm.
+*"Implements [Ukkonen's](https://en.wikipedia.org/wiki/Ukkonen%27s_algorithm) linear time algorithm."
  
  Extends the original implementation by accepting stings of an arbitrary type using templates.
  
