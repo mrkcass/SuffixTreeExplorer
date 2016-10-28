@@ -1,0 +1,12 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+*.dll
+*.pdb
+*.exe
+*.cache
+*.suo
+/SuffixTreeExample/bin/Debug/SuffixTreeExample.vshost.exe.manifest
+/SuffixTreeExample/obj/Debug/SuffixTreeExample.csproj.FileListAbsolute.txt
+/suffixtree/obj/Debug/suffixtree.csproj.FileListAbsolute.txt

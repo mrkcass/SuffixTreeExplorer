@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SuffixTreeExplorer")]
+[assembly: AssemblyTitle("SuffixTreeExample")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Aristocrat IT Global Support")]
-[assembly: AssemblyProduct("SuffixTreeExplorer")]
-[assembly: AssemblyCopyright("Copyright © Aristocrat IT Global Support 2016")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("SuffixTreeExample")]
+[assembly: AssemblyCopyright("Copyright ©  2008")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("ea2d103c-41d1-4d74-9380-2b59a7ca2bc4")]
+[assembly: Guid("f3f97303-f44a-4171-b28b-6ffb1e263c6d")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuffixTree", "SuffixTree\SuffixTree.csproj", "{EA2D103C-41D1-4D74-9380-2B59A7CA2BC4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuffixTreeExplorer", "SuffixTree\SuffixTreeExplorer.csproj", "{EA2D103C-41D1-4D74-9380-2B59A7CA2BC4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Msagl", "SuffixTree\Magl\MSAGL\Msagl.csproj", "{415D3E3F-7105-46C1-84D2-7ECB34213D92}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "drawing", "SuffixTree\Magl\Drawing\drawing.csproj", "{B76F8F71-4B00-4242-BE36-C9F0732511F7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphViewerGDI", "SuffixTree\Magl\tools\GraphViewerGDI\GraphViewerGDI.csproj", "{725CD2CB-CF37-414E-A5A6-F1D87D4D6EDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuffixTree", "SuffixTree\csharsuffixtree\suffixtree\SuffixTree.csproj", "{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -341,6 +343,78 @@ Global
 		{725CD2CB-CF37-414E-A5A6-F1D87D4D6EDE}.Surface Graph Viewer - Release|x64.Build.0 = Surface Graph Viewer - Release|x64
 		{725CD2CB-CF37-414E-A5A6-F1D87D4D6EDE}.Surface Graph Viewer - Release|x86.ActiveCfg = Surface Graph Viewer - Release|x86
 		{725CD2CB-CF37-414E-A5A6-F1D87D4D6EDE}.Surface Graph Viewer - Release|x86.Build.0 = Surface Graph Viewer - Release|x86
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.CutRelease|Any CPU.ActiveCfg = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.CutRelease|Any CPU.Build.0 = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.CutRelease|x64.ActiveCfg = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.CutRelease|x64.Build.0 = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.CutRelease|x86.ActiveCfg = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.CutRelease|x86.Build.0 = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Debug Surface Graph Viewer|Any CPU.ActiveCfg = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Debug Surface Graph Viewer|Any CPU.Build.0 = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Debug Surface Graph Viewer|x64.ActiveCfg = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Debug Surface Graph Viewer|x64.Build.0 = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Debug Surface Graph Viewer|x86.ActiveCfg = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Debug Surface Graph Viewer|x86.Build.0 = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Debug|x64.Build.0 = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Debug|x86.Build.0 = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.DebugDevTrace|Any CPU.ActiveCfg = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.DebugDevTrace|Any CPU.Build.0 = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.DebugDevTrace|x64.ActiveCfg = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.DebugDevTrace|x64.Build.0 = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.DebugDevTrace|x86.ActiveCfg = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.DebugDevTrace|x86.Build.0 = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.DebugSurface|Any CPU.ActiveCfg = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.DebugSurface|Any CPU.Build.0 = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.DebugSurface|x64.ActiveCfg = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.DebugSurface|x64.Build.0 = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.DebugSurface|x86.ActiveCfg = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.DebugSurface|x86.Build.0 = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.DebugWithoutRebuild|Any CPU.ActiveCfg = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.DebugWithoutRebuild|Any CPU.Build.0 = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.DebugWithoutRebuild|x64.ActiveCfg = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.DebugWithoutRebuild|x64.Build.0 = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.DebugWithoutRebuild|x86.ActiveCfg = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.DebugWithoutRebuild|x86.Build.0 = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.MinimalMsagl|Any CPU.ActiveCfg = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.MinimalMsagl|Any CPU.Build.0 = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.MinimalMsagl|x64.ActiveCfg = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.MinimalMsagl|x64.Build.0 = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.MinimalMsagl|x86.ActiveCfg = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.MinimalMsagl|x86.Build.0 = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Release|x64.ActiveCfg = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Release|x64.Build.0 = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Release|x86.ActiveCfg = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Release|x86.Build.0 = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Retail|Any CPU.ActiveCfg = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Retail|Any CPU.Build.0 = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Retail|x64.ActiveCfg = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Retail|x64.Build.0 = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Retail|x86.ActiveCfg = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Retail|x86.Build.0 = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Setup|Any CPU.ActiveCfg = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Setup|Any CPU.Build.0 = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Setup|x64.ActiveCfg = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Setup|x64.Build.0 = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Setup|x86.ActiveCfg = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Setup|x86.Build.0 = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Surface Graph Viewer - Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Surface Graph Viewer - Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Surface Graph Viewer - Debug|x64.ActiveCfg = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Surface Graph Viewer - Debug|x64.Build.0 = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Surface Graph Viewer - Debug|x86.ActiveCfg = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Surface Graph Viewer - Debug|x86.Build.0 = Debug|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Surface Graph Viewer - Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Surface Graph Viewer - Release|Any CPU.Build.0 = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Surface Graph Viewer - Release|x64.ActiveCfg = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Surface Graph Viewer - Release|x64.Build.0 = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Surface Graph Viewer - Release|x86.ActiveCfg = Release|Any CPU
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2}.Surface Graph Viewer - Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -349,5 +423,6 @@ Global
 		{415D3E3F-7105-46C1-84D2-7ECB34213D92} = {E43096A3-F9C7-434D-BE74-67BB961E1B9C}
 		{B76F8F71-4B00-4242-BE36-C9F0732511F7} = {E43096A3-F9C7-434D-BE74-67BB961E1B9C}
 		{725CD2CB-CF37-414E-A5A6-F1D87D4D6EDE} = {E43096A3-F9C7-434D-BE74-67BB961E1B9C}
+		{6557A3D7-8D7E-4978-A81B-FED58FB0CED2} = {E43096A3-F9C7-434D-BE74-67BB961E1B9C}
 	EndGlobalSection
 EndGlobal

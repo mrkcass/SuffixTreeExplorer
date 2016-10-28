@@ -7,8 +7,8 @@
     <ProjectGuid>{EA2D103C-41D1-4D74-9380-2B59A7CA2BC4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SuffixTree</RootNamespace>
-    <AssemblyName>SuffixTree</AssemblyName>
+    <RootNamespace>SuffixTree_Main</RootNamespace>
+    <AssemblyName>SuffixTreeExplorer</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -54,10 +54,6 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Source\SuffixTree\Edge.cs" />
-    <Compile Include="Source\SuffixTree\Node.cs" />
-    <Compile Include="Source\SuffixTree\Suffix.cs" />
-    <Compile Include="Source\SuffixTree\SuffixTree.cs" />
     <EmbeddedResource Include="Source\Main\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -69,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -84,6 +81,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="csharsuffixtree\suffixtree\SuffixTree.csproj">
+      <Project>{6557a3d7-8d7e-4978-a81b-fed58fb0ced2}</Project>
+      <Name>SuffixTree</Name>
+    </ProjectReference>
     <ProjectReference Include="Magl\Drawing\drawing.csproj">
       <Project>{b76f8f71-4b00-4242-be36-c9f0732511f7}</Project>
       <Name>drawing</Name>
