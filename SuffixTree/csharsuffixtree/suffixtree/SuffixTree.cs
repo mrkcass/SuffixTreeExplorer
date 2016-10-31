@@ -20,6 +20,7 @@ namespace ThirdParty_SuffixTree
       public List<int> theString;
       public Dictionary<int, Edge> Edges = null;
       public Dictionary<int, Node> Nodes = null;
+      public List<int> suffixArray = new List<int>();
 
       public SuffixTree(List<int> input)
       {
@@ -204,5 +205,39 @@ namespace ThirdParty_SuffixTree
          active.indexOfLastCharacter++;
          active.Canonize(theString, Edges);
       }
+
+#if false
+      void doTraversal(Node n, List<int> suffixArray, ref int idx)
+      {
+         if (n == null)
+         {
+            return;
+         }
+         if (n.suffixNode == -1) //If it is internal node
+         {
+            for (int i = 0; i < MAX_CHAR; i++)
+            {
+               if (n->children[i] != NULL)
+               {
+                  doTraversal(n->children[i], suffixArray, idx);
+               }
+            }
+         }
+         //If it is Leaf node other than "$" label
+         else if (n->suffixIndex > -1 && n->suffixIndex < size)
+         {
+            suffixArray[(*idx)++] = n->suffixIndex;
+         }
+      }
+
+      public void buildSuffixArray()
+      {
+         suffixArray.Clear();
+         for (int i = 0; i < theString.Count; i++)
+            suffixArray.Add(-1);
+         int idx = 0;
+         doTraversal(Nodes[0], suffixArray, ref idx);
+      }
+#endif
    }
 }
