@@ -32,6 +32,7 @@ namespace ThirdParty_SuffixTree
       public void BuildTree()
       {
          Suffix active = new Suffix(theString, Edges, 0, 0, -1);
+         Nodes.Add(0, new ThirdParty_SuffixTree.Node());
          for (int i = 0; i <= theString.Count - 1; i++)
          {
             AddPrefix(active, i);

@@ -123,9 +123,10 @@ namespace ThirdParty_SuffixTree
       public int SplitEdge(Suffix s, List<int> theString, Dictionary<int, Edge> edges, Dictionary<int, Node> nodes)
       {
          Remove(theString, edges);
-         Edge newEdge = new Edge(theString, this.indexOfFirstCharacter,
-             this.indexOfFirstCharacter + s.indexOfLastCharacter
-             - s.indexOfFirstCharacter, s.originNode);
+         Edge newEdge = new Edge(theString, 
+                                 this.indexOfFirstCharacter,
+                                 this.indexOfFirstCharacter + s.indexOfLastCharacter - s.indexOfFirstCharacter,
+                                 s.originNode);
          newEdge.Insert(theString, edges);
          if (nodes.ContainsKey(newEdge.endNode))
          {
@@ -141,6 +142,7 @@ namespace ThirdParty_SuffixTree
          this.indexOfFirstCharacter += s.indexOfLastCharacter - s.indexOfFirstCharacter + 1;
          this.startNode = newEdge.endNode;
          this.Insert(theString, edges);
+         nodes[newEdge.startNode].addChild(nodes[newEdge.endNode]);
          return newEdge.endNode;
       }
 

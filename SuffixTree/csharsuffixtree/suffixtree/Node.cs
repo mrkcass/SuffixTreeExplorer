@@ -10,6 +10,8 @@
  *
  */
 
+using System.Collections.Generic;
+
 namespace ThirdParty_SuffixTree
 {
    public class Node
@@ -19,13 +21,15 @@ namespace ThirdParty_SuffixTree
       public Node()
       {
          suffixNode = -1;
+
       }
 
-      public Node(Node node)
+      public void addChild(Node child)
       {
-         this.suffixNode = node.suffixNode;
+         children.Add(child.suffixNode, child);
       }
 
+      Dictionary<int, Node> children = new Dictionary<int, Node>();
       public static int Count = 1;
    }
 }
