@@ -24,9 +24,25 @@ namespace ThirdParty_SuffixTree
 
       }
 
+      public Node(int idx)
+      {
+         suffixNode = idx;
+
+      }
+
       public void addChild(Node child)
       {
          children.Add(child.suffixNode, child);
+      }
+
+      public Dictionary<int,Node>.Enumerator childIterator()
+      {
+         return children.GetEnumerator();
+      }
+
+      public int childCount()
+      {
+         return children.Count;
       }
 
       Dictionary<int, Node> children = new Dictionary<int, Node>();

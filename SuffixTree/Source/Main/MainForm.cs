@@ -21,6 +21,15 @@ namespace SuffixTreeExplorer
          List<int> numberList = new List<int>(numbers);
          m_Stree = new SuffixTree(numberList);
          m_Stree.BuildTree();
+         m_Stree.buildSuffixArray();
+      }
+
+      private void DisplayArray()
+      {
+         for (int i=0; i < m_Stree.suffixArray.Count; i++)
+         {
+            ctrlSuffixArray.Items.Add(ListToString(m_Stree.suffixArrayStr(i)));
+         }
       }
 
       private void DisplayTree()
@@ -66,7 +75,9 @@ namespace SuffixTreeExplorer
          List<int> numberList = new List<int>(numbers);
          m_Stree = new SuffixTree(numberList);
          m_Stree.BuildTree();
+         m_Stree.buildSuffixArray();
          DisplayTree();
+         DisplayArray();
       }
 
       private string ListToString(List<int> list)

@@ -35,7 +35,7 @@
          this.ctrlInputString = new System.Windows.Forms.TextBox();
          this.ctrlBuild = new System.Windows.Forms.Button();
          this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-         this.ctrlTreeView = new System.Windows.Forms.TreeView();
+         this.ctrlSuffixArray = new System.Windows.Forms.ListBox();
          this.tableLayoutPanel1.SuspendLayout();
          this.tableLayoutPanel2.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -146,7 +146,7 @@
          // 
          // splitContainer1.Panel1
          // 
-         this.splitContainer1.Panel1.Controls.Add(this.ctrlTreeView);
+         this.splitContainer1.Panel1.Controls.Add(this.ctrlSuffixArray);
          // 
          // splitContainer1.Panel2
          // 
@@ -155,13 +155,14 @@
          this.splitContainer1.SplitterDistance = 273;
          this.splitContainer1.TabIndex = 2;
          // 
-         // ctrlTreeView
+         // ctrlSuffixArray
          // 
-         this.ctrlTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
-         this.ctrlTreeView.Location = new System.Drawing.Point(0, 0);
-         this.ctrlTreeView.Name = "ctrlTreeView";
-         this.ctrlTreeView.Size = new System.Drawing.Size(273, 653);
-         this.ctrlTreeView.TabIndex = 1;
+         this.ctrlSuffixArray.Dock = System.Windows.Forms.DockStyle.Fill;
+         this.ctrlSuffixArray.FormattingEnabled = true;
+         this.ctrlSuffixArray.Location = new System.Drawing.Point(0, 0);
+         this.ctrlSuffixArray.Name = "ctrlSuffixArray";
+         this.ctrlSuffixArray.Size = new System.Drawing.Size(273, 653);
+         this.ctrlSuffixArray.TabIndex = 0;
          // 
          // MainForm
          // 
@@ -191,7 +192,7 @@
         private System.Windows.Forms.TextBox ctrlInputString;
         private System.Windows.Forms.Button ctrlBuild;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.TreeView ctrlTreeView;
-    }
+      private System.Windows.Forms.ListBox ctrlSuffixArray;
+   }
 }
 

@@ -31,11 +31,34 @@ namespace ThirdParty_SuffixTree
 
       public void BuildTree()
       {
+         Node.Count = 1;
          Suffix active = new Suffix(theString, Edges, 0, 0, -1);
          Nodes.Add(0, new ThirdParty_SuffixTree.Node());
          for (int i = 0; i <= theString.Count - 1; i++)
          {
             AddPrefix(active, i);
+         }
+         buildNodes();
+      }
+
+      public void buildNodes ()
+      {
+         Nodes.Clear();
+         var iter = Edges.GetEnumerator();
+         while (iter.MoveNext())
+         {
+            Edge edge = iter.Current.Value;
+            int startNameIdx = edge.startNode;
+            if (startNameIdx >= 0)
+            {
+               int endNameIdx = edge.endNode;
+
+               if (!Nodes.ContainsKey(edge.startNode))
+                  Nodes.Add(edge.startNode, new Node(edge.startNode));
+               if (!Nodes.ContainsKey(edge.endNode))
+                  Nodes.Add(edge.endNode, new Node(edge.endNode));
+               Nodes[edge.startNode].addChild(Nodes[edge.endNode]);
+            }
          }
       }
 
@@ -182,7 +205,12 @@ namespace ThirdParty_SuffixTree
             }
 
             Edge newEdge = new Edge(theString, indexOfLastCharacter, theString.Count - 1, parentNode);
-            newEdge.Insert(theString, Edges);
+            if (!Nodes.ContainsKey(newEdge.startNode))
+               Nodes.Add(newEdge.startNode, new Node(newEdge.startNode));
+            if (!Nodes.ContainsKey(newEdge.endNode))
+               Nodes.Add(newEdge.endNode, new Node(newEdge.endNode));
+            Nodes[newEdge.startNode].addChild(Nodes[newEdge.endNode]);
+            newEdge.Insert(theString, Edges, Nodes);
             if (lastParentNode > 0)
             {
                Nodes[lastParentNode].suffixNode = parentNode;
@@ -207,27 +235,24 @@ namespace ThirdParty_SuffixTree
          active.Canonize(theString, Edges);
       }
 
-#if false
-      void doTraversal(Node n, List<int> suffixArray, ref int idx)
+      void doTraversal(Node n, ref int idx)
       {
          if (n == null)
          {
             return;
          }
-         if (n.suffixNode == -1) //If it is internal node
+         if (n.childCount() > 0) //If it is internal node
          {
-            for (int i = 0; i < MAX_CHAR; i++)
+            var iter = n.childIterator();
+            while (iter.MoveNext())
             {
-               if (n->children[i] != NULL)
-               {
-                  doTraversal(n->children[i], suffixArray, idx);
-               }
+               doTraversal(iter.Current.Value, ref idx);
             }
          }
          //If it is Leaf node other than "$" label
-         else if (n->suffixIndex > -1 && n->suffixIndex < size)
+         else if (n.childCount() == 0 && n.suffixNode < theString.Count)
          {
-            suffixArray[(*idx)++] = n->suffixIndex;
+            suffixArray[idx++] = n.suffixNode;
          }
       }
 
@@ -237,8 +262,21 @@ namespace ThirdParty_SuffixTree
          for (int i = 0; i < theString.Count; i++)
             suffixArray.Add(-1);
          int idx = 0;
-         doTraversal(Nodes[0], suffixArray, ref idx);
+         doTraversal(Nodes[0], ref idx);
       }
-#endif
+
+      public List<int> suffixArrayStr(int arrayIdx)
+      {
+         if (suffixArray[arrayIdx] >= 0 && theString.Count > suffixArray[arrayIdx])
+         {
+            return theString.GetRange(suffixArray[arrayIdx], theString.Count - suffixArray[arrayIdx]);
+         }
+         else
+         {
+            List<int> empty = new List<int> ();
+            empty.Add(-1);
+            return empty;
+         }
+      }
    }
 }

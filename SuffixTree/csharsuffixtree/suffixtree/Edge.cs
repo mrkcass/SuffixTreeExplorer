@@ -58,7 +58,7 @@ namespace ThirdParty_SuffixTree
          this.indexOfLastCharacter = edge.indexOfLastCharacter;
       }
 
-      public void Insert(List<int> theString, Dictionary<int, Edge> Edges)
+      public void Insert(List<int> theString, Dictionary<int, Edge> Edges, Dictionary<int, Node> nodes)
       {
          int i = Hash(this.startNode, theString[this.indexOfFirstCharacter]);
          if (!Edges.ContainsKey(i))
@@ -127,7 +127,7 @@ namespace ThirdParty_SuffixTree
                                  this.indexOfFirstCharacter,
                                  this.indexOfFirstCharacter + s.indexOfLastCharacter - s.indexOfFirstCharacter,
                                  s.originNode);
-         newEdge.Insert(theString, edges);
+         newEdge.Insert(theString, edges, nodes);
          if (nodes.ContainsKey(newEdge.endNode))
          {
             nodes[newEdge.endNode].suffixNode = s.originNode;
@@ -141,7 +141,7 @@ namespace ThirdParty_SuffixTree
 
          this.indexOfFirstCharacter += s.indexOfLastCharacter - s.indexOfFirstCharacter + 1;
          this.startNode = newEdge.endNode;
-         this.Insert(theString, edges);
+         this.Insert(theString, edges, nodes);
          nodes[newEdge.startNode].addChild(nodes[newEdge.endNode]);
          return newEdge.endNode;
       }
