@@ -16,9 +16,8 @@ namespace SuffixTreeExplorer
       private void MainForm_Shown(object sender, EventArgs e)
       {
          ctrlInputString.Text = "10 20 30 40 500 10234 40 50 40 50";
-         string[] tokens = ctrlInputString.Text.Split();
-         int [] numbers = Array.ConvertAll(tokens, int.Parse);
-         List<int> numberList = new List<int>(numbers);
+         ctrlInputString.Text = "mississippi";
+         List<int> numberList = InputToList();
          m_Stree = new SuffixTree(numberList);
          m_Stree.BuildTree();
          m_Stree.buildSuffixArray();
@@ -55,7 +54,7 @@ namespace SuffixTreeExplorer
 
       private void ctrlBuild_Click(object sender, EventArgs e)
       {
-         Build(ctrlInputString.Text);
+         Build();
       }
 
       private void ctrlInputString_KeyPress(object sender, KeyPressEventArgs e)
@@ -63,16 +62,13 @@ namespace SuffixTreeExplorer
          if (e.KeyChar == (char)13)
          {
             e.Handled = true;
-            Build(ctrlInputString.Text);
+            Build();
          }
       }
 
-      private void Build(string input)
+      private void Build()
       {
-         m_Input = input;
-         string[] tokens = ctrlInputString.Text.Split();
-         int[] numbers = Array.ConvertAll(tokens, int.Parse);
-         List<int> numberList = new List<int>(numbers);
+         List<int> numberList = InputToList();
          m_Stree = new SuffixTree(numberList);
          m_Stree.BuildTree();
          m_Stree.buildSuffixArray();
@@ -80,12 +76,50 @@ namespace SuffixTreeExplorer
          DisplayArray();
       }
 
+      private List<int> InputToList()
+      {
+         List<int> numberList;
+         if (ctrlString.Checked)
+         {
+            numberList = new List<int>();
+            foreach (var c in ctrlInputString.Text)
+               numberList.Add(c - 'a');
+         }
+         else
+         {
+            string[] tokens = ctrlInputString.Text.Split();
+            int[] numbers = Array.ConvertAll(tokens, int.Parse);
+            numberList = new List<int>(numbers);
+         }
+         return numberList;
+      }
+
       private string ListToString(List<int> list)
       {
-         return string.Join(" ", list.ToArray());
+         string result = "";
+         if (ctrlString.Checked)
+         {
+            foreach (int val in list)
+               result += (char)('a' + val);
+         }
+         else
+         {
+            result = string.Join(" ", list.ToArray());
+         }
+         return result;
       }
 
       SuffixTree m_Stree;
       private string m_Input = "";
+
+      private void ctrlString_CheckedChanged(object sender, EventArgs e)
+      {
+
+      }
+
+      private void ctrlNumber_CheckedChanged(object sender, EventArgs e)
+      {
+
+      }
    }
 }

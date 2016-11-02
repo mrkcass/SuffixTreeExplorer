@@ -32,10 +32,11 @@ namespace ThirdParty_SuffixTree
 
       public void addChild(Node child)
       {
-         children.Add(child.suffixNode, child);
-      }
+            //children.Add(child.suffixNode, child);
+            children.Add(child.suffixNode, child);
+        }
 
-      public Dictionary<int,Node>.Enumerator childIterator()
+      public SortedDictionary<int,Node>.Enumerator childIterator()
       {
          return children.GetEnumerator();
       }
@@ -45,7 +46,7 @@ namespace ThirdParty_SuffixTree
          return children.Count;
       }
 
-      Dictionary<int, Node> children = new Dictionary<int, Node>();
+      SortedDictionary<int, Node> children = new SortedDictionary<int, Node>();
       public static int Count = 1;
    }
 }

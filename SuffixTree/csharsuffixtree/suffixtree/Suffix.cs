@@ -21,7 +21,7 @@ namespace ThirdParty_SuffixTree
       //public string theString;
       //public Dictionary<int, Edge> edges;
 
-      public Suffix(List<int> theString, Dictionary<int, Edge> edges, int node, int start, int stop)
+      public Suffix(List<int> theString, SortedDictionary<int, Edge> edges, int node, int start, int stop)
       {
          this.originNode = node;
          this.indexOfFirstCharacter = start;
@@ -47,7 +47,7 @@ namespace ThirdParty_SuffixTree
          }
       }
 
-      public void Canonize(List<int> theString, Dictionary<int, Edge> edges)
+      public void Canonize(List<int> theString, SortedDictionary<int, Edge> edges)
       {
          if (!IsExplicit)
          {

@@ -58,7 +58,7 @@ namespace ThirdParty_SuffixTree
          this.indexOfLastCharacter = edge.indexOfLastCharacter;
       }
 
-      public void Insert(List<int> theString, Dictionary<int, Edge> Edges, Dictionary<int, Node> nodes)
+      public void Insert(List<int> theString, SortedDictionary<int, Edge> Edges, SortedDictionary<int, Node> nodes)
       {
          int i = Hash(this.startNode, theString[this.indexOfFirstCharacter]);
          if (!Edges.ContainsKey(i))
@@ -76,7 +76,7 @@ namespace ThirdParty_SuffixTree
          Edges[i] = this;
       }
 
-      public void Remove(List<int> theString, Dictionary<int, Edge> Edges)
+      public void Remove(List<int> theString, SortedDictionary<int, Edge> Edges)
       {
          int i = Hash(this.startNode, theString[this.indexOfFirstCharacter]);
          while (Edges[i].startNode != this.startNode || Edges[i].indexOfFirstCharacter != this.indexOfFirstCharacter)
@@ -120,7 +120,7 @@ namespace ThirdParty_SuffixTree
          }
       }
 
-      public int SplitEdge(Suffix s, List<int> theString, Dictionary<int, Edge> edges, Dictionary<int, Node> nodes)
+      public int SplitEdge(Suffix s, List<int> theString, SortedDictionary<int, Edge> edges, SortedDictionary<int, Node> nodes)
       {
          Remove(theString, edges);
          Edge newEdge = new Edge(theString, 
@@ -142,11 +142,10 @@ namespace ThirdParty_SuffixTree
          this.indexOfFirstCharacter += s.indexOfLastCharacter - s.indexOfFirstCharacter + 1;
          this.startNode = newEdge.endNode;
          this.Insert(theString, edges, nodes);
-         nodes[newEdge.startNode].addChild(nodes[newEdge.endNode]);
          return newEdge.endNode;
       }
 
-      public static Edge Find(List<int> theString, Dictionary<int, Edge> edges, int node, int c)
+      public static Edge Find(List<int> theString, SortedDictionary<int, Edge> edges, int node, int c)
       {
          int i = Hash(node, c);
          for (;;)
