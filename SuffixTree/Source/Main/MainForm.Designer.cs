@@ -66,7 +66,6 @@
          this.ctrlGraph.LayoutEditingEnabled = true;
          this.ctrlGraph.Location = new System.Drawing.Point(0, 0);
          this.ctrlGraph.LooseOffsetForRouting = 0.25D;
-         this.ctrlGraph.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
          this.ctrlGraph.MouseHitDistance = 0.05D;
          this.ctrlGraph.Name = "ctrlGraph";
          this.ctrlGraph.NavigationVisible = true;
@@ -79,7 +78,7 @@
          this.ctrlGraph.SaveButtonVisible = true;
          this.ctrlGraph.SaveGraphButtonVisible = true;
          this.ctrlGraph.SaveInVectorFormatEnabled = true;
-         this.ctrlGraph.Size = new System.Drawing.Size(1350, 1003);
+         this.ctrlGraph.Size = new System.Drawing.Size(900, 653);
          this.ctrlGraph.TabIndex = 0;
          this.ctrlGraph.TightOffsetForRouting = 0.125D;
          this.ctrlGraph.ToolBarIsVisible = true;
@@ -94,36 +93,34 @@
          // tableLayoutPanel1
          // 
          this.tableLayoutPanel1.ColumnCount = 1;
-         this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+         this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
          this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
          this.tableLayoutPanel1.Controls.Add(this.splitContainer1, 0, 1);
          this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
          this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-         this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
          this.tableLayoutPanel1.Name = "tableLayoutPanel1";
          this.tableLayoutPanel1.RowCount = 2;
-         this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.775687F));
-         this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 95.22431F));
-         this.tableLayoutPanel1.Size = new System.Drawing.Size(1734, 1063);
+         this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+         this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+         this.tableLayoutPanel1.Size = new System.Drawing.Size(1156, 691);
          this.tableLayoutPanel1.TabIndex = 1;
          // 
          // tableLayoutPanel2
          // 
          this.tableLayoutPanel2.ColumnCount = 4;
-         this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 14F));
-         this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 226F));
-         this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
+         this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 9F));
+         this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 151F));
+         this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89F));
          this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
          this.tableLayoutPanel2.Controls.Add(this.ctrlInputString, 3, 0);
          this.tableLayoutPanel2.Controls.Add(this.ctrlBuild, 2, 0);
          this.tableLayoutPanel2.Controls.Add(this.panel1, 1, 0);
          this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-         this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 5);
-         this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+         this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
          this.tableLayoutPanel2.Name = "tableLayoutPanel2";
          this.tableLayoutPanel2.RowCount = 1;
          this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-         this.tableLayoutPanel2.Size = new System.Drawing.Size(1726, 40);
+         this.tableLayoutPanel2.Size = new System.Drawing.Size(1150, 26);
          this.tableLayoutPanel2.TabIndex = 1;
          // 
          // ctrlInputString
@@ -131,20 +128,18 @@
          this.ctrlInputString.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-         this.ctrlInputString.Location = new System.Drawing.Point(377, 5);
-         this.ctrlInputString.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+         this.ctrlInputString.Location = new System.Drawing.Point(252, 3);
          this.ctrlInputString.Name = "ctrlInputString";
-         this.ctrlInputString.Size = new System.Drawing.Size(1345, 26);
+         this.ctrlInputString.Size = new System.Drawing.Size(895, 20);
          this.ctrlInputString.TabIndex = 1;
          this.ctrlInputString.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ctrlInputString_KeyPress);
          // 
          // ctrlBuild
          // 
-         this.ctrlBuild.Anchor = System.Windows.Forms.AnchorStyles.Left;
-         this.ctrlBuild.Location = new System.Drawing.Point(244, 5);
-         this.ctrlBuild.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+         this.ctrlBuild.Anchor = System.Windows.Forms.AnchorStyles.None;
+         this.ctrlBuild.Location = new System.Drawing.Point(167, 3);
          this.ctrlBuild.Name = "ctrlBuild";
-         this.ctrlBuild.Size = new System.Drawing.Size(112, 30);
+         this.ctrlBuild.Size = new System.Drawing.Size(75, 19);
          this.ctrlBuild.TabIndex = 0;
          this.ctrlBuild.Text = "Build";
          this.ctrlBuild.UseVisualStyleBackColor = true;
@@ -154,17 +149,20 @@
          // 
          this.panel1.Controls.Add(this.ctrlNumber);
          this.panel1.Controls.Add(this.ctrlString);
-         this.panel1.Location = new System.Drawing.Point(17, 3);
+         this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+         this.panel1.Location = new System.Drawing.Point(11, 2);
+         this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
          this.panel1.Name = "panel1";
-         this.panel1.Size = new System.Drawing.Size(200, 34);
+         this.panel1.Size = new System.Drawing.Size(147, 22);
          this.panel1.TabIndex = 2;
          // 
          // ctrlNumber
          // 
          this.ctrlNumber.AutoSize = true;
-         this.ctrlNumber.Location = new System.Drawing.Point(109, 5);
+         this.ctrlNumber.Location = new System.Drawing.Point(73, 3);
+         this.ctrlNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
          this.ctrlNumber.Name = "ctrlNumber";
-         this.ctrlNumber.Size = new System.Drawing.Size(88, 24);
+         this.ctrlNumber.Size = new System.Drawing.Size(60, 17);
          this.ctrlNumber.TabIndex = 1;
          this.ctrlNumber.Text = "number";
          this.ctrlNumber.UseVisualStyleBackColor = true;
@@ -174,9 +172,10 @@
          // 
          this.ctrlString.AutoSize = true;
          this.ctrlString.Checked = true;
-         this.ctrlString.Location = new System.Drawing.Point(4, 4);
+         this.ctrlString.Location = new System.Drawing.Point(3, 3);
+         this.ctrlString.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
          this.ctrlString.Name = "ctrlString";
-         this.ctrlString.Size = new System.Drawing.Size(73, 24);
+         this.ctrlString.Size = new System.Drawing.Size(50, 17);
          this.ctrlString.TabIndex = 0;
          this.ctrlString.TabStop = true;
          this.ctrlString.Text = "string";
@@ -186,8 +185,7 @@
          // splitContainer1
          // 
          this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-         this.splitContainer1.Location = new System.Drawing.Point(4, 55);
-         this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+         this.splitContainer1.Location = new System.Drawing.Point(3, 35);
          this.splitContainer1.Name = "splitContainer1";
          // 
          // splitContainer1.Panel1
@@ -197,29 +195,25 @@
          // splitContainer1.Panel2
          // 
          this.splitContainer1.Panel2.Controls.Add(this.ctrlGraph);
-         this.splitContainer1.Size = new System.Drawing.Size(1726, 1003);
-         this.splitContainer1.SplitterDistance = 370;
-         this.splitContainer1.SplitterWidth = 6;
+         this.splitContainer1.Size = new System.Drawing.Size(1150, 653);
+         this.splitContainer1.SplitterDistance = 246;
          this.splitContainer1.TabIndex = 2;
          // 
          // ctrlSuffixArray
          // 
          this.ctrlSuffixArray.Dock = System.Windows.Forms.DockStyle.Fill;
          this.ctrlSuffixArray.FormattingEnabled = true;
-         this.ctrlSuffixArray.ItemHeight = 20;
          this.ctrlSuffixArray.Location = new System.Drawing.Point(0, 0);
-         this.ctrlSuffixArray.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
          this.ctrlSuffixArray.Name = "ctrlSuffixArray";
-         this.ctrlSuffixArray.Size = new System.Drawing.Size(370, 1003);
+         this.ctrlSuffixArray.Size = new System.Drawing.Size(246, 653);
          this.ctrlSuffixArray.TabIndex = 0;
          // 
          // MainForm
          // 
-         this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+         this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-         this.ClientSize = new System.Drawing.Size(1734, 1063);
+         this.ClientSize = new System.Drawing.Size(1156, 691);
          this.Controls.Add(this.tableLayoutPanel1);
-         this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
          this.Name = "MainForm";
          this.Text = "SuffixTreeExplorer";
          this.Shown += new System.EventHandler(this.MainForm_Shown);

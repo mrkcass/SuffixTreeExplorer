@@ -15,12 +15,11 @@ namespace SuffixTreeExplorer
 
       private void MainForm_Shown(object sender, EventArgs e)
       {
-         ctrlInputString.Text = "10 20 30 40 500 10234 40 50 40 50";
-         ctrlInputString.Text = "mississippi";
-         List<int> numberList = InputToList();
-         m_Stree = new SuffixTree(numberList);
-         m_Stree.BuildTree();
-         m_Stree.buildSuffixArray();
+         if (ctrlString.Checked)
+            ctrlInputString.Text = testString;
+         else
+            ctrlInputString.Text = testNumbers;
+         Build();
       }
 
       private void DisplayArray()
@@ -76,6 +75,13 @@ namespace SuffixTreeExplorer
          DisplayArray();
       }
 
+      private void Clear()
+      {
+         ctrlInputString.Text = "";
+         ctrlSuffixArray.Items.Clear();
+         ctrlGraph.Graph = null;
+      }
+
       private List<int> InputToList()
       {
          List<int> numberList;
@@ -114,12 +120,25 @@ namespace SuffixTreeExplorer
 
       private void ctrlString_CheckedChanged(object sender, EventArgs e)
       {
-
+         if (ctrlString.Checked)
+         {
+            Clear();
+            ctrlInputString.Text = testString;
+            Build();
+         }
       }
 
       private void ctrlNumber_CheckedChanged(object sender, EventArgs e)
       {
-
+         if (ctrlNumber.Checked)
+         {
+            Clear();
+            ctrlInputString.Text = testNumbers;
+            Build();
+         }
       }
+
+      private string testNumbers = "10 20 30 40 500 10234 40 50 40 50";
+      private string testString = "mississippi";
    }
 }
