@@ -17,24 +17,32 @@ namespace ThirdParty_SuffixTree
    public class Node
    {
       public int suffixNode;
+      public int edgeIn;
 
       public Node()
       {
          suffixNode = -1;
+         edgeIn = -1;
 
       }
 
       public Node(int idx)
       {
          suffixNode = idx;
+         edgeIn = -1;
+      }
 
+      public Node(int idx, int inputEdge)
+      {
+         suffixNode = idx;
+         edgeIn = inputEdge;
       }
 
       public void addChild(Node child)
       {
-            //children.Add(child.suffixNode, child);
+         if (!children.ContainsKey(child.suffixNode))
             children.Add(child.suffixNode, child);
-        }
+      }
 
       public SortedDictionary<int,Node>.Enumerator childIterator()
       {

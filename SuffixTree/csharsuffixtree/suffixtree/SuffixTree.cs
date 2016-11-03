@@ -11,6 +11,7 @@
  */
 
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 
 namespace ThirdParty_SuffixTree
@@ -57,12 +58,17 @@ namespace ThirdParty_SuffixTree
                   Nodes.Add(edge.startNode, new Node(edge.startNode));
                if (!Nodes.ContainsKey(edge.endNode))
                   Nodes.Add(edge.endNode, new Node(edge.endNode));
-               Nodes[edge.startNode].addChild(Nodes[edge.endNode]);
+               if (edge.startNode != edge.endNode)
+               {
+                  Debug.Assert(Nodes[edge.endNode].edgeIn == -1);
+                  Nodes[edge.startNode].addChild(Nodes[edge.endNode]);
+                  Nodes[edge.endNode].edgeIn = iter.Current.Key;
+               }
             }
          }
       }
 
-        public void Save(BinaryWriter writer, SuffixTree tree)
+      public void Save(BinaryWriter writer, SuffixTree tree)
       {
          writer.Write(Edges.Count);
          writer.Write(theString.Count);
@@ -259,16 +265,23 @@ namespace ThirdParty_SuffixTree
 
       public List<int> suffixArrayStr(int arrayIdx)
       {
-         if (suffixArray[arrayIdx] >= 0 && theString.Count >= suffixArray[arrayIdx])
+         
+         if (suffixArray[arrayIdx] >= 0)
          {
-            return theString.GetRange(suffixArray[arrayIdx]-1, theString.Count - (suffixArray[arrayIdx]-1));
+            Node node = Nodes[arrayIdx];
+            if (node.edgeIn > 0)
+            {
+               int firstIdx = Edges[node.edgeIn].indexOfFirstCharacter;
+               int count = Edges[node.edgeIn].indexOfLastCharacter - firstIdx + 1;
+               return theString.GetRange(firstIdx, count);
+            }
          }
-         else
-         {
-            List<int> empty = new List<int> ();
-            empty.Add(-1);
-            return empty;
-         }
+
+
+         List<int> empty = new List<int> ();
+         empty.Add((int)(-1));
+         return empty;
       }
+
    }
 }
