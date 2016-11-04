@@ -26,6 +26,7 @@ namespace ThirdParty_SuffixTree
       public SuffixTree(List<int> input)
       {
          theString = input;
+         theString.Add(int.MinValue);
          Nodes = new SortedDictionary<int, Node>();
          Edges = new SortedDictionary<int, Edge>();
          suffixArray = new List<int>();
@@ -236,21 +237,21 @@ namespace ThirdParty_SuffixTree
          active.Canonize(theString, Edges);
       }
 
-      void doTraversal(Node n, ref int idx)
+      void doTraversal(Node n, int length, ref int idx)
       {
          if (n.childCount() > 0) //If it is internal node
          {
             var iter = n.childIterator();
             while (iter.MoveNext())
             {
-               doTraversal(iter.Current.Value, ref idx);
+               Edge edgein = Edges[iter.Current.Value.edgeIn];
+               int length_with_edge = length + (edgein.indexOfLastCharacter - edgein.indexOfFirstCharacter) + 1;
+               doTraversal(iter.Current.Value, length_with_edge, ref idx);
             }
          }
-            //If it is Leaf node other than "$" label
-            //else if (n.childCount() == 0 && n.suffixNode < theString.Count)
          else if (n.childCount() == 0)
          {
-            suffixArray[idx++] = n.suffixNode;
+            suffixArray[idx++] = suffixArray.Count - length;
          }
       }
 
@@ -260,7 +261,7 @@ namespace ThirdParty_SuffixTree
          for (int i = 0; i < theString.Count; i++)
             suffixArray.Add(-1);
          int idx = 0;
-         doTraversal(Nodes[0], ref idx);
+         doTraversal(Nodes[0], 0, ref idx);
       }
 
       public List<int> suffixArrayStr(int arrayIdx)
@@ -268,13 +269,10 @@ namespace ThirdParty_SuffixTree
          
          if (suffixArray[arrayIdx] >= 0)
          {
-            Node node = Nodes[arrayIdx];
-            if (node.edgeIn > 0)
-            {
-               int firstIdx = Edges[node.edgeIn].indexOfFirstCharacter;
-               int count = Edges[node.edgeIn].indexOfLastCharacter - firstIdx + 1;
+            int firstIdx = suffixArray[arrayIdx];
+            int count = theString.Count - firstIdx;
+            if (count > 0 && firstIdx < theString.Count)
                return theString.GetRange(firstIdx, count);
-            }
          }
 
 

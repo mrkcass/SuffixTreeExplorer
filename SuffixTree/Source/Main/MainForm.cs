@@ -71,15 +71,21 @@ namespace SuffixTreeExplorer
          m_Stree = new SuffixTree(numberList);
          m_Stree.BuildTree();
          m_Stree.buildSuffixArray();
+         ClearOuput();
          DisplayTree();
          DisplayArray();
+      }
+
+      private void ClearOuput()
+      {
+         ctrlSuffixArray.Items.Clear();
+         ctrlGraph.Graph = null;
       }
 
       private void Clear()
       {
          ctrlInputString.Text = "";
-         ctrlSuffixArray.Items.Clear();
-         ctrlGraph.Graph = null;
+         ClearOuput();
       }
 
       private List<int> InputToList()
@@ -106,7 +112,12 @@ namespace SuffixTreeExplorer
          if (ctrlString.Checked)
          {
             foreach (int val in list)
-               result += (char)('a' + val);
+            {
+               if (val >= 0)
+                  result += (char)('a' + val);
+               else
+                  result += (char)('$');
+            }
          }
          else
          {
@@ -139,6 +150,6 @@ namespace SuffixTreeExplorer
       }
 
       private string testNumbers = "10 20 30 40 500 10234 40 50 40 50";
-      private string testString = "mississippi";
+      private string testString = "missim";
    }
 }
