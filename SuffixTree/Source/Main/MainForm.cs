@@ -24,7 +24,7 @@ namespace SuffixTreeExplorer
 
       private void DisplayArray()
       {
-         for (int i=0; i < m_Stree.suffixArray.Count; i++)
+         for (int i=1; i < m_Stree.suffixArray.Count; i++)
          {
             ctrlSuffixArray.Items.Add(ListToString(m_Stree.suffixArrayStr(i)));
          }
@@ -42,7 +42,12 @@ namespace SuffixTreeExplorer
             {
                int endNameIdx = edge.endNode;
                Msagl.Edge graphEdge = graph.AddEdge(startNameIdx.ToString(), endNameIdx.ToString());
-               List<int> substring = m_Stree.theString.GetRange(edge.indexOfFirstCharacter, (edge.indexOfLastCharacter - edge.indexOfFirstCharacter) + 1);
+               int len = (edge.indexOfLastCharacter - edge.indexOfFirstCharacter) + 1;
+               List<int> substring;
+               if (edge.indexOfFirstCharacter + len < m_Stree.theString.Count)
+                  substring = m_Stree.theString.GetRange(edge.indexOfFirstCharacter, (edge.indexOfLastCharacter - edge.indexOfFirstCharacter)+1);
+               else
+                  substring = m_Stree.theString.GetRange(edge.indexOfFirstCharacter, (edge.indexOfLastCharacter - edge.indexOfFirstCharacter));
                graphEdge.LabelText = ListToString(substring);
             }
          }

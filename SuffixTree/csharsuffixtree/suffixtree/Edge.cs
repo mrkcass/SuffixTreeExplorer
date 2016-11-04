@@ -58,7 +58,7 @@ namespace ThirdParty_SuffixTree
          this.indexOfLastCharacter = edge.indexOfLastCharacter;
       }
 
-      public void Insert(List<int> theString, SortedDictionary<int, Edge> Edges, SortedDictionary<int, Node> nodes)
+      public void Insert(List<int> theString, Dictionary<int, Edge> Edges, Dictionary<int, Node> nodes)
       {
          int i = Hash(this.startNode, theString[this.indexOfFirstCharacter]);
          if (!Edges.ContainsKey(i))
@@ -76,7 +76,7 @@ namespace ThirdParty_SuffixTree
          Edges[i] = this;
       }
 
-      public void Remove(List<int> theString, SortedDictionary<int, Edge> Edges)
+      public void Remove(List<int> theString, Dictionary<int, Edge> Edges)
       {
          int i = Hash(this.startNode, theString[this.indexOfFirstCharacter]);
          while (Edges[i].startNode != this.startNode || Edges[i].indexOfFirstCharacter != this.indexOfFirstCharacter)
@@ -120,7 +120,7 @@ namespace ThirdParty_SuffixTree
          }
       }
 
-      public int SplitEdge(Suffix s, List<int> theString, SortedDictionary<int, Edge> edges, SortedDictionary<int, Node> nodes)
+      public int SplitEdge(Suffix s, List<int> theString, Dictionary<int, Edge> edges, Dictionary<int, Node> nodes)
       {
          Remove(theString, edges);
          Edge newEdge = new Edge(theString, 
@@ -128,6 +128,7 @@ namespace ThirdParty_SuffixTree
                                  this.indexOfFirstCharacter + s.indexOfLastCharacter - s.indexOfFirstCharacter,
                                  s.originNode);
          newEdge.Insert(theString, edges, nodes);
+
          if (nodes.ContainsKey(newEdge.endNode))
          {
             nodes[newEdge.endNode].suffixNode = s.originNode;
@@ -145,7 +146,7 @@ namespace ThirdParty_SuffixTree
          return newEdge.endNode;
       }
 
-      public static Edge Find(List<int> theString, SortedDictionary<int, Edge> edges, int node, int c)
+      public static Edge Find(List<int> theString, Dictionary<int, Edge> edges, int node, int c)
       {
          int i = Hash(node, c);
          for (;;)
@@ -171,7 +172,7 @@ namespace ThirdParty_SuffixTree
 
       public static int Hash(int node, int c)
       {
-         long rtnValue = ((node << 32) + (long)c) % (long)HASH_TABLE_SIZE;
+         long rtnValue = ((long)c + (long)(node << 32)) % (long)HASH_TABLE_SIZE;
          return (int)rtnValue;
       }
    }

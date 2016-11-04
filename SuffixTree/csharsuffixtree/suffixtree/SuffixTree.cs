@@ -19,16 +19,16 @@ namespace ThirdParty_SuffixTree
    public class SuffixTree
    {
       public List<int> theString;
-      public SortedDictionary<int, Edge> Edges = null;
-      public SortedDictionary<int, Node> Nodes = null;
+      public Dictionary<int, Edge> Edges = null;
+      public Dictionary<int, Node> Nodes = null;
       public List<int> suffixArray = null;
 
       public SuffixTree(List<int> input)
       {
          theString = input;
          theString.Add(int.MinValue);
-         Nodes = new SortedDictionary<int, Node>();
-         Edges = new SortedDictionary<int, Edge>();
+         Nodes = new Dictionary<int, Node>();
+         Edges = new Dictionary<int, Edge>();
          suffixArray = new List<int>();
     }
 
@@ -211,7 +211,7 @@ namespace ThirdParty_SuffixTree
                parentNode = edge.SplitEdge(active, theString, Edges, Nodes);
             }
 
-            Edge newEdge = new Edge(theString, indexOfLastCharacter, theString.Count - 1, parentNode);
+            Edge newEdge = new Edge(theString, indexOfLastCharacter, theString.Count, parentNode);
             newEdge.Insert(theString, Edges, Nodes);
             if (lastParentNode > 0)
             {
@@ -276,9 +276,9 @@ namespace ThirdParty_SuffixTree
          }
 
 
-         List<int> empty = new List<int> ();
-         empty.Add((int)(-1));
-         return empty;
+         List<int> full = new List<int>(theString);
+         //empty.Add((int)(-1));
+         return full;
       }
 
    }
